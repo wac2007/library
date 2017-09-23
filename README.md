@@ -1,5 +1,8 @@
 # Library
+> Simple cart application for shopping books.
 
+
+---- 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.3.
 
 ## Development server
@@ -14,9 +17,11 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-## Running unit tests
+## Unit tests
+Unit tests are writing using [Jasmine 2.6](https://jasmine.github.io/api/2.6/) and run with [Karma](https://karma-runner.github.io)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Run unit tests
+Run `ng test` to execute the unit tests via Karma.
 
 ## Running end-to-end tests
 
