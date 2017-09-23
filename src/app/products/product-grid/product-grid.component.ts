@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 import { ProductService } from './services/product.service';
 import { ProductCardComponent } from '../product-card/product-card.component';
+import { Product } from '../shared/product';
 
 @Component({
   selector: 'app-product-grid',
@@ -18,7 +19,7 @@ export class ProductGridComponent {
     this.products = this.service.list();
   }
 
-  public addToCart(productId) {
+  public addToCart(product: Product) {
     //todo: Implement Cart Logic
   }
 

@@ -1,5 +1,6 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { ButtonComponent } from '../../button/button.component';
+import { Product } from '../shared/product';
 
 @Component({
   selector: 'app-product-card',
@@ -9,16 +10,18 @@ import { ButtonComponent } from '../../button/button.component';
     ButtonComponent
   ]
 })
-export class ProductCardComponent {
-  @Input() title: string;
-  @Input() description: string;
-  @Input() imageUrl: string;
-  @Input() price: Number;
-  @Input() productId: Number;
-  @Output() selected = new EventEmitter<Number>();
+export class ProductCardComponent implements OnInit {
+  @Input() product: Product;
+  @Output() selected = new EventEmitter<Product>();
+
+  currentProduct: Product;
 
   public select() {
-    this.selected.emit(this.productId);
+    this.selected.emit(this.product);
+  }
+
+  ngOnInit() {
+    this.currentProduct = this.product;
   }
 
 }

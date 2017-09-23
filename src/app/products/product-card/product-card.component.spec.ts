@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProductCardComponent } from './product-card.component';
 import { ButtonComponent } from '../../button/button.component';
+import { Product } from '../shared/product';
 
 describe('ProductCardComponent', () => {
   let component: ProductCardComponent;
@@ -20,38 +21,24 @@ describe('ProductCardComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ProductCardComponent);
     component = fixture.componentInstance;
+    component.product = new Product(1, 'New Book', 'http://via.placeholder.com/350x150', 10, 'Lorem Ipsum');
     fixture.detectChanges();
   });
 
   describe('should render rightly', () => {
     it('should have the right title', () => {
-      let textLabel = 'Book Title';
-
-      fixture.componentInstance.title = textLabel;
-      fixture.detectChanges();
-      
       const element = fixture.nativeElement.querySelector('h3');
-      expect(element.innerHTML.trim()).toBe(textLabel);
+      expect(element.innerHTML.trim()).toBe('New Book');
     });
 
     it('should have the right text description', () => {
-      let textLabel = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
-
-      fixture.componentInstance.description = textLabel;
-      fixture.detectChanges();
-      
       const element = fixture.nativeElement.querySelector('p');
-      expect(element.innerHTML.trim()).toBe(textLabel);
+      expect(element.innerHTML.trim()).toBe('Lorem Ipsum');
     });
 
     it('should load the image', () => {
-      let imgUrl = 'http://via.placeholder.com/350x150';
-
-      fixture.componentInstance.imageUrl = imgUrl;
-      fixture.detectChanges();
-      
       const element = fixture.nativeElement.querySelector('img');
-      expect(element.src).toBe(imgUrl);
+      expect(element.src).toBe('http://via.placeholder.com/350x150');
     });
 
     it('should have a button', () => {
@@ -60,9 +47,6 @@ describe('ProductCardComponent', () => {
     });
 
     it('should have the price', () => {
-      fixture.componentInstance.price = 10;
-      fixture.detectChanges();
-      
       const element = fixture.nativeElement.querySelector('.price');
       expect(element.innerHTML.trim()).toBe('R$ 10.00');
     });
@@ -70,12 +54,7 @@ describe('ProductCardComponent', () => {
 
   it('should call function on clicked one time', () => {
     spyOn(fixture.componentInstance, 'select').and.callThrough();
-    
-    fixture.componentInstance.productId = 1;
-    fixture.detectChanges();
-
-    const button = fixture.debugElement.nativeElement.querySelector('button');
-    button.click();
+    fixture.debugElement.nativeElement.querySelector('button').click();
 
     expect(fixture.componentInstance.select).toHaveBeenCalledTimes(1);
   });

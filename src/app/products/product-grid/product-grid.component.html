@@ -1,9 +1,5 @@
 <section>
   <app-product-card *ngFor="let product of products" 
-    [productId]="product.productId"
-    [title]="product.title"
-    [description]="product.description"
-    [imageUrl]="product.imageUrl"
-    [price]="product.price"
+    [product]="product"
     (selected)="addToCart($event)"></app-product-card>
 </section>
