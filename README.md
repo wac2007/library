@@ -1,4 +1,4 @@
-# Library
+# Library [![Build Status](https://travis-ci.org/wac2007/library.svg?branch=master)](https://travis-ci.org/wac2007/library)
 > Simple cart application for shopping books.
 
 
