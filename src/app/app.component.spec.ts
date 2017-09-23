@@ -2,6 +2,7 @@ import { TestBed, async } from '@angular/core/testing';
 import { RouterModule } from '@angular/router';
 import { APP_BASE_HREF } from '@angular/common';
 
+// import { ProductsModule } from './products/products.module';
 import { AppComponent } from './app.component';
 import { CoreComponent } from './core/core.component';
 import { PagesModule } from './pages/pages.module';
@@ -15,10 +16,11 @@ describe('AppComponent', () => {
         CoreComponent
       ],
       imports: [
+        // ProductsModule,
+        PagesModule,
         RouterModule.forRoot(
           appRoutes
         ),
-        PagesModule
       ],
       providers: [
         {

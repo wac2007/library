@@ -10,6 +10,9 @@ import { Product } from '../shared/product';
   styleUrls: ['./product-grid.component.css'],
   entryComponents: [ 
     ProductCardComponent
+  ],
+  providers: [
+    ProductService
   ]
 })
 export class ProductGridComponent {
