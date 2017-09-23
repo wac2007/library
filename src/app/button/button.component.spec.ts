@@ -24,10 +24,6 @@ describe('ButtonComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-
   it('should have the button component', () => {
     const button = fixture.nativeElement.querySelector('button');
     expect(button).toBeTruthy();
@@ -38,7 +34,7 @@ describe('ButtonComponent', () => {
     fixture.componentInstance.label = textLabel;
     fixture.detectChanges();
     const button = fixture.nativeElement.querySelector('button');
-    expect(button.innerHTML.trim()).toBe('Testing');
+    expect(button.innerHTML.trim()).toBe(textLabel);
   });
 
   it('should call function on clicked one time', () => {
