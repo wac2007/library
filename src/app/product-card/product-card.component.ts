@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { ButtonComponent } from '../button/button.component';
 
 @Component({
@@ -15,10 +15,10 @@ export class ProductCardComponent {
   @Input() imageUrl: string;
   @Input() price: Number;
   @Input() productId: Number;
-  @Input() addFunction: Function;
+  @Output() selected = new EventEmitter<Number>();
 
-  public addToCart() {
-    this.addFunction(this.productId);
+  public select() {
+    this.selected.emit(this.productId);
   }
 
 }

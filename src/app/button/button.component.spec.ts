@@ -38,12 +38,12 @@ describe('ButtonComponent', () => {
   });
 
   it('should call function on clicked one time', () => {
-    spyOn(fixture.componentInstance, 'callback');
+    spyOn(fixture.componentInstance, 'emitClick').and.callThrough();
 
     const button = fixture.debugElement.nativeElement.querySelector('button');
     button.click();
 
-    expect(fixture.componentInstance.callback).toHaveBeenCalledTimes(1);
+    expect(fixture.componentInstance.emitClick).toHaveBeenCalledTimes(1);
   });
 });
 

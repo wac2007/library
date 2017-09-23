@@ -7,9 +7,9 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class ButtonComponent {
   @Input() label: string;
-  @Input() action: Function;
+  @Output() clicked = new EventEmitter();
 
-  public callback() {
-    this.action();
+  public emitClick() {
+    this.clicked.emit();
   }
 }
