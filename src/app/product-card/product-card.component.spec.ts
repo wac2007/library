@@ -69,7 +69,7 @@ describe('ProductCardComponent', () => {
   });
 
   it('should call function on clicked one time', () => {
-    spyOn(fixture.componentInstance, 'addToCart');
+    spyOn(fixture.componentInstance, 'select').and.callThrough();
     
     fixture.componentInstance.productId = 1;
     fixture.detectChanges();
@@ -77,6 +77,6 @@ describe('ProductCardComponent', () => {
     const button = fixture.debugElement.nativeElement.querySelector('button');
     button.click();
 
-    expect(fixture.componentInstance.addToCart).toHaveBeenCalledTimes(1);
+    expect(fixture.componentInstance.select).toHaveBeenCalledTimes(1);
   });
 });
