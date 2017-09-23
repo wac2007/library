@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProductCardComponent } from './product-card.component';
-import { ButtonComponent } from '../../button/button.component';
+import { ButtonComponent } from '../../shared/button/button.component';
 import { Product } from '../shared/product';
 
 describe('ProductCardComponent', () => {
