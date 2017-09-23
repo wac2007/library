@@ -1,0 +1,7 @@
+<article>
+  <h3>{{ title }}</h3>
+  <img [src]="imageUrl" [alt]="title">
+  <label class="price">R$ {{ price | number : '1.2-2' }}</label>
+  <p>{{ description }}</p>
+  <lib-button label="Add to Cart" [action]="addToCart"></lib-button>
+</article>
