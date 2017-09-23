@@ -11,7 +11,9 @@ describe('ButtonComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ButtonComponent ]
+      declarations: [ 
+        ButtonComponent
+      ]
     })
     .compileComponents();
   }));
@@ -39,7 +41,7 @@ describe('ButtonComponent', () => {
     expect(button.innerHTML.trim()).toBe('Testing');
   });
 
-  it('should call the callback on clicked', () => {
+  it('should call function on clicked one time', () => {
     spyOn(fixture.componentInstance, 'callback');
 
     const button = fixture.debugElement.nativeElement.querySelector('button');
