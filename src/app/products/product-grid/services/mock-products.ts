@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
+import { Product } from '../../shared/product';
 
-const serverProducts = [
+export const serverProducts: Product[] = [
   {
     productId: 1,
     title: 'Book ABC',
@@ -16,14 +16,3 @@ const serverProducts = [
     description: 'Ut pretium arcu odio, nec mattis lacus dictum sed. Nulla vitae sollicitudin nunc.'
   }
 ];
-
-@Injectable()
-export class ProductService {
-
-  constructor() { }
-
-  list () {
-    return serverProducts;
-  }
-
-}

@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProductGridComponent } from './product-grid.component';
 import { ProductCardComponent } from '../product-card/product-card.component';
-import { ButtonComponent } from '../button/button.component';
+import { ButtonComponent } from '../../button/button.component';
 import { ProductService } from './services/product.service';
 
 
