@@ -1,7 +1,11 @@
 import { TestBed, async } from '@angular/core/testing';
+import { RouterModule } from '@angular/router';
+import { APP_BASE_HREF } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { CoreComponent } from './core/core.component';
+import { PagesModule } from './pages/pages.module';
+import { appRoutes } from './pages/routes';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -10,6 +14,18 @@ describe('AppComponent', () => {
         AppComponent,
         CoreComponent
       ],
+      imports: [
+        RouterModule.forRoot(
+          appRoutes
+        ),
+        PagesModule
+      ],
+      providers: [
+        {
+          provide: APP_BASE_HREF,
+          useValue: '/'
+        }
+      ]
     }).compileComponents();
   }));
   it('should create the app', async(() => {
