@@ -5,7 +5,7 @@ export class Product {
   public price: Number;
   public description: string;
 
-  constructor (id, title, imageUrl, price, description) {
+  constructor (id: Number, title: string, imageUrl: string, price: Number, description: string) {
     this.id = id;
     this.title = title;
     this.imageUrl = imageUrl;
