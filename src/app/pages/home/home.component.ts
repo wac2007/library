@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import { CartService } from '../../products/shared/cart-service/cart.service';
 import { ProductGridComponent } from '../../products/product-grid/product-grid.component';
 
 @Component({
@@ -10,11 +11,10 @@ import { ProductGridComponent } from '../../products/product-grid/product-grid.c
     ProductGridComponent
   ]
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  constructor(
+    public cartService: CartService
+  ) { }
 
 }

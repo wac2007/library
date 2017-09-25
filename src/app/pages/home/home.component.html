@@ -1,4 +1,7 @@
 <header class="text-center">
   <h1 class="header-divisor">Livraria</h1>
-  <app-product-grid></app-product-grid>
+  <div class="pull-right">
+    Carrinho ({{ cartService.getCount() }})
+  </div>
 </header>
+<app-product-grid></app-product-grid>

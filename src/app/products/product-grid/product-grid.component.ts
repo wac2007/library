@@ -14,7 +14,6 @@ import { ProductService } from './services/product.service';
   ],
   providers: [
     ProductService,
-    CartService
   ]
 })
 export class ProductGridComponent {
