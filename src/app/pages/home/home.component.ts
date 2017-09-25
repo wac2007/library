@@ -6,10 +6,7 @@ import { ProductGridComponent } from '../../products/product-grid/product-grid.c
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
-  entryComponents: [
-    ProductGridComponent
-  ]
+  styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
 
