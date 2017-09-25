@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
-import { ProductService } from './services/product.service';
-import { ProductCardComponent } from '../product-card/product-card.component';
+import { CartService } from '../shared/cart-service/cart.service';
 import { Product } from '../shared/product';
+import { ProductCardComponent } from '../product-card/product-card.component';
+import { ProductService } from './services/product.service';
 
 @Component({
   selector: 'app-product-grid',
@@ -12,24 +13,27 @@ import { Product } from '../shared/product';
     ProductCardComponent
   ],
   providers: [
-    ProductService
+    ProductService,
+    CartService
   ]
 })
 export class ProductGridComponent {
   private products = [];
+
+  constructor(
+    private service: ProductService,
+    public cartService: CartService
+  ) {
+    this.getProducts();
+  }
 
   private getProducts() {
     this.products = this.service.list();
   }
 
   public addToCart(product: Product) {
-    //todo: Implement Cart Logic
+    this.cartService.setItem(product, 1);
   }
 
-  constructor(
-    private service: ProductService
-  ) {
-    this.getProducts();
-  }
 
 }
