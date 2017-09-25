@@ -5,3 +5,15 @@
 .product-card-content {
   padding: 1rem;
 }
+.text-center {
+  text-align: center;
+}
+.product-price {
+  font-weight: bold;
+}
+.no-margin {
+  margin: 0;
+}
+.margin-bt-1 {
+  margin-bottom: 1rem;
+}
