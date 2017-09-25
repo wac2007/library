@@ -47,7 +47,7 @@ describe('ProductCardComponent', () => {
     });
 
     it('should have the price', () => {
-      const element = fixture.nativeElement.querySelector('.price');
+      const element = fixture.nativeElement.querySelector('.product-price');
       expect(element.innerHTML.trim()).toBe('R$ 10.00');
     });
   });
