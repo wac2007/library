@@ -1,7 +1,15 @@
 <article class="product-card">
-  <h3>{{ currentProduct.title }}</h3>
-  <img [src]="currentProduct.imageUrl" [alt]="currentProduct.title">
-  <label class="price">R$ {{ currentProduct.price | number : '1.2-2' }}</label>
-  <p>{{ currentProduct.description }}</p>
-  <lib-button label="Add to Cart" (clicked)="select()"></lib-button>
+  <div class="product-card-header">
+    <h3>{{ currentProduct.title }}</h3>
+  </div>
+  <div class="product-card-content row">
+    <div class="col-6">
+      <img [src]="currentProduct.imageUrl" [alt]="currentProduct.title">
+    </div>
+    <div class="col-6">
+      <p>{{ currentProduct.description }}</p>
+      <label class="price">R$ {{ currentProduct.price | number : '1.2-2' }}</label>
+    </div>
+  </div>
+  <lib-button label="Add to Cart" (clicked)="select()" classes="button-block button-add-cart"></lib-button>
 </article>
