@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
 
-
+import { hasClass } from '../helpers';
 import { ButtonComponent } from './button.component';
 
 describe('ButtonComponent', () => {
@@ -44,6 +44,15 @@ describe('ButtonComponent', () => {
     button.click();
 
     expect(fixture.componentInstance.emitClick).toHaveBeenCalledTimes(1);
+  });
+
+  it('should render with defined classes', () => {
+    fixture.componentInstance.classes = 'button-block';
+    fixture.componentInstance.ngOnInit();
+    fixture.detectChanges();
+    const button = fixture.nativeElement.querySelector('button');
+    expect(hasClass(button, 'button')).toBeTruthy();
+    expect(hasClass(button, 'button-block')).toBeTruthy();
   });
 });
 
