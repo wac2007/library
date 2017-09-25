@@ -4,10 +4,10 @@ import { randomString } from '../../../shared/helpers';
 export class Cart {
   idCart: string;
   items: CartItem[] = [];
-  count: Number = 0;
-  total: Number = 0;
+  count: number = 0;
+  total: number = 0;
 
-  constructor(idCart?: string, items?: CartItem[], count?: Number, total?: Number) {
+  constructor(idCart?: string, items?: CartItem[], count?: number, total?: number) {
     this.idCart = idCart ? idCart : randomString();
     
     if (items && count && total) {
