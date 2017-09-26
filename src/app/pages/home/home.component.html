@@ -1,6 +1,6 @@
 <header class="text-center header header-divisor">
   <div class="pull-right">
-    Carrinho ({{ cartService.getCount() }})
+    <a [routerLink]="['/cart']">Carrinho ({{ cartService.getCount() }})</a>
   </div>
   <h1 class="main-title">Livraria</h1>
 </header>

@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
-import { HomeComponent } from './home/home.component';
 import { CartComponent } from './cart/cart.component';
+import { HomeComponent } from './home/home.component';
 import { ProductsModule } from '../products/products.module';
+import { appRoutes } from './routes';
 import { SharedModule } from '../shared/shared.module';
 
 
@@ -12,11 +14,12 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     ProductsModule,
-    SharedModule
+    SharedModule,
+    RouterModule
   ],
   declarations: [
-    HomeComponent, 
     CartComponent,
+    HomeComponent,
   ]
 })
 export class PagesModule { }

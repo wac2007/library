@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 import { CartService } from '../../products/shared/cart-service/cart.service';
 import { ProductGridComponent } from '../../products/product-grid/product-grid.component';
