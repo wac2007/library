@@ -1,17 +1,9 @@
 export class Product {
-  public id: number;
-  public title: string;
-  public imageUrl: string;
-  public price: number;
-  public description: string;
-
-  constructor (id: number, title: string, imageUrl: string, price: number, description: string) {
-    Object.assign(this, {
-      id,
-      title,
-      imageUrl,
-      price,
-      description
-    });
-  }
+  constructor (
+    public id: number,
+    public title: string,
+    public imageUrl: string,
+    public price: number,
+    public description: string
+  ) {}
 }
