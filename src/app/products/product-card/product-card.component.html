@@ -8,7 +8,7 @@
     </div>
     <div class="col-6">
       <p class="no-margin margin-bt-1">{{ currentProduct.description }}</p>
-      <label class="product-price">R$ {{ currentProduct.price | number : '1.2-2' }}</label>
+      <label class="product-price">{{ currentProduct.price | price }}</label>
     </div>
   </div>
   <lib-button label="Add to Cart" (clicked)="select()" classes="button-block button-add-cart"></lib-button>

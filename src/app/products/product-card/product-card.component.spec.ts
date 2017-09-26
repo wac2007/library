@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProductCardComponent } from './product-card.component';
-import { ButtonComponent } from '../../shared/button/button.component';
 import { Product } from '../shared/product';
+import { ProductCardComponent } from './product-card.component';
+import { SharedModule } from '../../shared/shared.module';
 
 describe('ProductCardComponent', () => {
   let component: ProductCardComponent;
@@ -10,9 +10,11 @@ describe('ProductCardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        SharedModule
+      ],
       declarations: [ 
         ProductCardComponent,
-        ButtonComponent
       ]
     })
     .compileComponents();
@@ -48,7 +50,7 @@ describe('ProductCardComponent', () => {
 
     it('should have the price', () => {
       const element = fixture.nativeElement.querySelector('.product-price');
-      expect(element.innerHTML.trim()).toBe('R$ 10.00');
+      expect(element.innerHTML.trim()).toBe('R$10,00');
     });
   });
 
