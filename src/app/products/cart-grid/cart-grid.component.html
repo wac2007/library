@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="row">
+    <div class="col">Título</div>
+    <div class="col">Preço</div>
+    <div class="col">Quantidade</div>
+    <div class="col">Subtotal</div>
+    <div class="col-1"></div>
+  </div>
+  <app-cart-row *ngFor="let item of cartItems" [cartItem]="item"></app-cart-row>
+</div>

@@ -12,6 +12,10 @@ export class CartService {
     return this.cart.items;
   }
 
+  getIterableItems(): Array<CartItem> {
+    return Object.keys(this.cart.items).map((key) => this.cart.items[key]);
+  }
+
   setItem(product: Product, quant: number): void {
     let cartItem: CartItem = this.getItemInCart(product.id);
     if (cartItem) {

@@ -3,5 +3,7 @@
   <div class="col item-price">{{ cartItem.product.price | price }}</div>
   <div class="col item-quant">{{ cartItem.quant }}</div>
   <div class="col item-subtotal">{{ subtotal() | price }}</div>
-  <lib-button label="Remover"></lib-button>
+  <div class="col">
+    <lib-button label="Remover"></lib-button>
+  </div>
 </div>
