@@ -5,7 +5,9 @@ export class CartItem {
   quant: number;
 
   constructor(product: Product, quant: number) {
-    this.product = product;
-    this.quant = quant;
+    Object.assign(this, {
+      product,
+      quant
+    });
   }
 }

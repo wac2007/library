@@ -6,10 +6,12 @@ export class Product {
   public description: string;
 
   constructor (id: number, title: string, imageUrl: string, price: number, description: string) {
-    this.id = id;
-    this.title = title;
-    this.imageUrl = imageUrl;
-    this.price = price;
-    this.description = description;
+    Object.assign(this, {
+      id,
+      title,
+      imageUrl,
+      price,
+      description
+    });
   }
 }
