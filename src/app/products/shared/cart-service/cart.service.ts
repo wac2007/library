@@ -40,12 +40,18 @@ export class CartService {
     return this.cart.items[id] || null;
   }
   
-  getTotal(): Number {
+  getTotal(): number {
     return this.cart.total;
   }
   
-  getCount(): Number {
+  getCount(): number {
     return this.cart.count;
+  }
+
+  getCountTotal(): number {
+    return this.getIterableItems().reduce((previous, actual) => 
+      previous + actual.quant
+    , 0);
   }
   
   clearCart() {

@@ -39,4 +39,13 @@ describe('CartService', () => {
     let _item = cartService.getItemInCart(1);
     expect(_item.quant).toBe(7);
   });
+  
+  it('should bring the full count of items', () => {
+    const product = new Product(1, 'TestProduct', 'http://via.placeholder.com/150x150', 20, 'Lorem Ipsum Dolumn');
+    const product2 = new Product(2, 'TestProduct2', 'http://via.placeholder.com/150x150', 40, 'Lorem Ipsum Dolumn');
+    cartService.setItem(product, 8);
+    cartService.setItem(product2, 12);
+
+    expect(cartService.getCountTotal()).toBe(20);
+  });
 });
