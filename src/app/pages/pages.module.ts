@@ -22,6 +22,11 @@ import { HeaderComponent } from './shared/header/header.component';
     CartComponent,
     HomeComponent,
     HeaderComponent,
+  ],
+  exports: [
+    CartComponent,
+    HomeComponent,
+    HeaderComponent
   ]
 })
 export class PagesModule { }

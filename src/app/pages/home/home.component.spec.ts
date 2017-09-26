@@ -7,6 +7,7 @@ import { CartComponent } from '../cart/cart.component';
 import { HeaderComponent } from '../shared/header/header.component';
 import { HomeComponent } from './home.component';
 import { ProductsModule } from '../../products/products.module';
+import { PagesModule } from '../pages.module';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -15,11 +16,9 @@ describe('HomeComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        HomeComponent,
-        HeaderComponent,
-        CartComponent
       ],
       imports: [
+        PagesModule,
         ProductsModule,
         RouterModule.forRoot(appRoutes)
       ],

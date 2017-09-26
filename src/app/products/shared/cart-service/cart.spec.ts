@@ -3,10 +3,8 @@ import { CartItem } from './cart-item';
 import { CartService } from './cart.service';
 import { Product } from '../product';
 
-
 describe('CartService', () => {
-  let cart;
-  let cartService;
+  let cart, cartService;
 
   beforeEach(() => {
     cartService = new CartService();

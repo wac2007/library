@@ -3,13 +3,9 @@ import { RouterModule } from '@angular/router';
 import { APP_BASE_HREF } from '@angular/common';
 
 import { appRoutes } from '../../routes';
-import { CartComponent } from '../../../pages/cart/cart.component';
 import { CartService } from '../../../products/shared/cart-service/cart.service';
 import { HeaderComponent } from './header.component';
-import { HomeComponent } from '../../../pages/home/home.component';
-import { ProductCardComponent } from '../../../products/product-card/product-card.component';
-import { ProductGridComponent } from '../../../products/product-grid/product-grid.component';
-import { SharedModule } from '../../../shared/shared.module';
+import { PagesModule } from '../../pages.module';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -18,15 +14,10 @@ describe('HeaderComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ 
-        HeaderComponent,
-        CartComponent,
-        HomeComponent,
-        ProductGridComponent,
-        ProductCardComponent
       ],
       imports: [
+        PagesModule,
         RouterModule.forRoot(appRoutes),
-        SharedModule
       ],
       providers: [
         CartService,

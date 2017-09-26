@@ -1,11 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ButtonComponent } from '../../shared/button/button.component';
-import { CartService } from '../shared/cart-service/cart.service';
-import { ProductCardComponent } from '../product-card/product-card.component';
 import { ProductGridComponent } from './product-grid.component';
-import { ProductService } from './services/product.service';
-
+import { ProductsModule } from '../products.module';
 
 describe('ProductGridComponent', () => {
   let component: ProductGridComponent;
@@ -13,15 +9,9 @@ describe('ProductGridComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ 
-        ProductGridComponent,
-        ProductCardComponent,
-        ButtonComponent,
+      imports: [
+        ProductsModule
       ],
-      providers: [
-        ProductService,
-        CartService
-      ]
     })
     .compileComponents();
   }));
