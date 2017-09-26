@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ButtonComponent } from './button/button.component';
+import { PricePipe } from './price/price.pipe';
 
 @NgModule({
   id: module.id,
@@ -9,7 +10,8 @@ import { ButtonComponent } from './button/button.component';
     CommonModule
   ],
   declarations: [
-    ButtonComponent
+    ButtonComponent,
+    PricePipe,
   ],
   exports: [
     CommonModule,
