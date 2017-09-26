@@ -13,4 +13,8 @@ export class HeaderComponent {
   constructor(
     public cartService: CartService
   ) { }
+
+  getCount() {
+    return this.cartService.getDistinctCount()
+  }
 }

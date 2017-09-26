@@ -18,8 +18,8 @@ describe('CartService', () => {
     cartService.setItem(product, 1);
     const countItems = Object.keys(cartService.getItems()).length;
     expect(countItems).toBe(1);
-    expect(cartService.getTotal()).toBe(20);
-    expect(cartService.getCount()).toBe(countItems);
+    expect(cartService.getPriceTotal()).toBe(20);
+    expect(cartService.getDistinctCount()).toBe(countItems);
   });
 
   it('should bring item in cart', () => {
@@ -47,5 +47,14 @@ describe('CartService', () => {
     cartService.setItem(product2, 12);
 
     expect(cartService.getCountTotal()).toBe(20);
+  });
+
+  it('should bring the sum price of all items', () => {
+    const product = new Product(1, 'TestProduct', 'http://via.placeholder.com/150x150', 10, 'Lorem Ipsum Dolumn');
+    const product2 = new Product(2, 'TestProduct2', 'http://via.placeholder.com/150x150', 30, 'Lorem Ipsum Dolumn');
+    cartService.setItem(product, 1);
+    cartService.setItem(product2, 3);
+
+    expect(cartService.getPriceTotal()).toBe(100);
   });
 });

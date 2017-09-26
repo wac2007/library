@@ -32,7 +32,6 @@ export class CartService {
       this.cart.count++;
     }
     this.cart.items[product.id] = cartItem;
-    this.cart.total += product.price;
     this.updateLocalStorage();
   }
   
@@ -40,17 +39,19 @@ export class CartService {
     return this.cart.items[id] || null;
   }
   
-  getTotal(): number {
-    return this.cart.total;
-  }
-  
-  getCount(): number {
+  getDistinctCount(): number {
     return this.cart.count;
   }
 
   getCountTotal(): number {
-    return this.getIterableItems().reduce((previous, actual) => 
-      previous + actual.quant
+    return this.getIterableItems().reduce((previous, item) => 
+      previous + item.quant
+    , 0);
+  }
+
+  getPriceTotal(): number {
+    return this.getIterableItems().reduce((previous, item) => 
+      previous + (item.product.price * item.quant)
     , 0);
   }
   

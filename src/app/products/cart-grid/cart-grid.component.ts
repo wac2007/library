@@ -13,7 +13,7 @@ export class CartGridComponent implements OnInit {
   public cartItems: Array<CartItem> = [];
 
   constructor(
-    private cartService: CartService,
+    public cartService: CartService,
   ) { 
   }
 
@@ -23,6 +23,14 @@ export class CartGridComponent implements OnInit {
   
   getCartItems() {
     this.cartItems = this.cartService.getIterableItems();
+  }
+
+  getCountTotal() {
+    return this.cartService.getCountTotal();
+  }
+
+  getPriceTotal() {
+    return this.cartService.getPriceTotal();
   }
 
 }
