@@ -8,15 +8,24 @@ import { Product } from '../product';
 export class CartService {
   private cart: Cart = new Cart();
 
-  getItems(): CartItem[] {
+  getItems(): Object {
     return this.cart.items;
   }
 
-  //todo: update quantity only if is the same product
   setItem(product: Product, quant: number): void {
-    this.cart.items.push(new CartItem(product, quant));
-    this.cart.count++;
+    let cartItem: CartItem = this.getItemInCart(product.id);
+    if (cartItem) {
+      cartItem.quant += quant;
+    } else {
+      cartItem = new CartItem(product, quant);
+      this.cart.count++;
+    }
+    this.cart.items[product.id] = cartItem;
     this.cart.total += product.price;
+  }
+
+  getItemInCart(id: number) {
+    return this.cart.items[id] || null;
   }
 
   getTotal(): Number {
