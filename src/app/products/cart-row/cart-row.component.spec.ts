@@ -50,4 +50,13 @@ describe('CartRowComponent', () => {
     const element = fixture.nativeElement.querySelector('button');
     expect(element).toBeTruthy();
   });
+
+  it('should have trigger delete on button click', () => {
+    spyOn(fixture.componentInstance, 'triggerDelete');
+
+    const button = fixture.debugElement.nativeElement.querySelector('button');
+    button.click();
+
+    expect(fixture.componentInstance.triggerDelete).toHaveBeenCalledTimes(1);
+  });
 });

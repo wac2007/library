@@ -13,3 +13,11 @@
 .mg-tp-1 {
   margin-top: 1rem;
 }
+
+.pd-bt-01 {
+  padding-bottom: 0.1rem;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #000;
+}

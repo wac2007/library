@@ -28,40 +28,33 @@ describe('CartGridComponent', () => {
     fixture = TestBed.createComponent(CartGridComponent);
     component = fixture.componentInstance;
     fixture.componentInstance.cartService.clearCart();
+    const product = new Product(1, 'Book ABC', '', 10, 'Lorem Ipsum');
+    const product2 = new Product(2, 'Book XYZ', '', 20, 'Lorem Ipsum');
+    fixture.componentInstance.cartService.setItem(product, 1);
+    fixture.componentInstance.cartService.setItem(product2, 2);
+    fixture.componentInstance.getCartItems();
     fixture.detectChanges();
   });
 
   it('should have app-cart-row element', () => {
-    const product = new Product(1, 'Book ABC', '', 10, 'Lorem Ipsum');
-    const cartItem = new CartItem(product, 1);
-    fixture.componentInstance.cartItems = [cartItem];
-    fixture.detectChanges();
-
     const element = fixture.debugElement.nativeElement.querySelector('app-cart-row');
     expect(element).toBeTruthy();
   });
 
   it('should have count total', () => {
-    const product = new Product(1, 'Book ABC', '', 10, 'Lorem Ipsum');
-    const product2 = new Product(2, 'Book XYZ', '', 20, 'Lorem Ipsum');
-    fixture.componentInstance.cartService.setItem(product, 1);
-    fixture.componentInstance.cartService.setItem(product2, 2);
-    fixture.componentInstance.getCartItems();
-    fixture.detectChanges();
-
     const element = fixture.debugElement.nativeElement.querySelector('.count-total');
     expect(parseInt(element.innerHTML.trim())).toBe(3);
   });
   
   it('should have price total', () => {
-    const product = new Product(1, 'Book ABC', '', 10, 'Lorem Ipsum');
-    const product2 = new Product(2, 'Book XYZ', '', 20, 'Lorem Ipsum');
-    fixture.componentInstance.cartService.setItem(product, 1);
-    fixture.componentInstance.cartService.setItem(product2, 2);
-    fixture.componentInstance.getCartItems();
-    fixture.detectChanges();
-
     const element = fixture.debugElement.nativeElement.querySelector('.price-total');
     expect(element.innerHTML.trim()).toBe('R$50,00');
+  });
+
+  it('should have trigger delete on button click', () => {
+    spyOn(fixture.componentInstance, 'deleteItem');
+    const button = fixture.debugElement.nativeElement.querySelector('button');
+    button.click();
+    expect(fixture.componentInstance.deleteItem).toHaveBeenCalledTimes(1);
   });
 });

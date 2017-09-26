@@ -1,12 +1,19 @@
 <div class="container">
-  <div class="row text-bold mg-bt-1">
+  <div class="row text-bold mg-bt-1 border-bottom pd-bt-01">
     <div class="col-4">Título</div>
     <div class="col-2">Preço</div>
     <div class="col-2">Quantidade</div>
     <div class="col-2">Subtotal</div>
     <div class="col-2"></div>
   </div>
-  <app-cart-row *ngFor="let item of cartItems" [cartItem]="item"></app-cart-row>
+  <div class="row" *ngIf="cartItems.length < 1">
+    <div class="col">
+      Nenhum item adicionado ao carrinho
+    </div>
+  </div>
+  <div *ngIf="cartItems.length > 0">
+    <app-cart-row *ngFor="let item of cartItems" [cartItem]="item" (delete)="deleteItem($event)"></app-cart-row>
+  </div>
   <div class="row text-bold mg-tp-1">
     <div class="col-6 text-right">Total:</div>
     <div class="col-2 count-total">{{ getCountTotal() }}</div>

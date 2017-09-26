@@ -57,4 +57,15 @@ describe('CartService', () => {
 
     expect(cartService.getPriceTotal()).toBe(100);
   });
+
+  it('should remove a selected item', () => {
+    const product = new Product(1, 'TestProduct', 'http://via.placeholder.com/150x150', 10, 'Lorem Ipsum Dolumn');
+    const product2 = new Product(2, 'TestProduct2', 'http://via.placeholder.com/150x150', 30, 'Lorem Ipsum Dolumn');
+    cartService.setItem(product, 1);
+    cartService.setItem(product2, 3);
+
+    cartService.removeItem('2');
+
+    expect(cartService.getDistinctCount()).toBe(1);
+  });
 });

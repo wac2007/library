@@ -33,4 +33,9 @@ export class CartGridComponent implements OnInit {
     return this.cartService.getPriceTotal();
   }
 
+  deleteItem(cartItem: CartItem) {
+    this.cartService.removeItem(cartItem.product.id);
+    this.getCartItems();
+  }
+
 }

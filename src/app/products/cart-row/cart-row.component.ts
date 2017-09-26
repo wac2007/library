@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import { CartItem } from '../shared/cart-service/cart-item';
 
@@ -9,10 +9,15 @@ import { CartItem } from '../shared/cart-service/cart-item';
 })
 export class CartRowComponent {
   @Input() cartItem: CartItem;
+  @Output() delete = new EventEmitter();
 
+  triggerDelete() {
+    this.delete.emit(this.cartItem);
+  }
   subtotal() {
     return this.cartItem.getSubTotal();
   }
+
 
   constructor() { }
 

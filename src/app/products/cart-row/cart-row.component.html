@@ -4,6 +4,6 @@
   <div class="col-2 item-quant">{{ cartItem.quant }}</div>
   <div class="col-2 item-subtotal">{{ subtotal() | price }}</div>
   <div class="col-2">
-    <lib-button label="Remover"></lib-button>
+    <lib-button label="Remover" (clicked)="triggerDelete()"></lib-button>
   </div>
 </div>
