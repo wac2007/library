@@ -6,4 +6,8 @@ export class CartItem {
     public quant: number
   ) {
   }
+
+  public getSubTotal() {
+    return this.product.price * this.quant;
+  }
 }

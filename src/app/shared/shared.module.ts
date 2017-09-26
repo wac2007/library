@@ -15,7 +15,8 @@ import { PricePipe } from './price/price.pipe';
   ],
   exports: [
     CommonModule,
-    ButtonComponent
+    ButtonComponent,
+    PricePipe
   ]
 })
 export class SharedModule { }

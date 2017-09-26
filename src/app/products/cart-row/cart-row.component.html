@@ -1,0 +1,7 @@
+<div class="row">
+  <div class="col item-title">{{ cartItem.product.title }}</div>
+  <div class="col item-price">{{ cartItem.product.price | price }}</div>
+  <div class="col item-quant">{{ cartItem.quant }}</div>
+  <div class="col item-subtotal">{{ subtotal() | price }}</div>
+  <lib-button label="Remover"></lib-button>
+</div>

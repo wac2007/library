@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { CartRowComponent } from './cart-row/cart-row.component';
 import { CartService } from './shared/cart-service/cart.service';
-import { SharedModule } from '../shared/shared.module';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { ProductGridComponent } from './product-grid/product-grid.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   id: module.id,
@@ -13,6 +14,7 @@ import { ProductGridComponent } from './product-grid/product-grid.component';
     SharedModule
   ],
   declarations: [
+    CartRowComponent,
     ProductCardComponent,
     ProductGridComponent,
   ],
@@ -25,7 +27,8 @@ import { ProductGridComponent } from './product-grid/product-grid.component';
   ],
   exports: [
     ProductCardComponent,
-    ProductGridComponent
+    ProductGridComponent,
+    SharedModule
   ]
 })
 export class ProductsModule { }
