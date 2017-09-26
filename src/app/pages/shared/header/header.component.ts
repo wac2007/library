@@ -1,5 +1,4 @@
 import { Component, Input} from '@angular/core';
-import { RouterLink } from '@angular/router';
 
 import { CartService } from '../../../products/shared/cart-service/cart.service';
 

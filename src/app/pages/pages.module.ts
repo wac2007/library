@@ -21,7 +21,7 @@ import { HeaderComponent } from './shared/header/header.component';
   declarations: [
     CartComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
   ]
 })
 export class PagesModule { }
