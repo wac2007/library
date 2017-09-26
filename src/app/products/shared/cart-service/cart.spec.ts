@@ -1,3 +1,5 @@
+import { LocalStorageService } from 'ngx-webstorage';
+
 import { Cart } from './cart';
 import { CartItem } from './cart-item';
 import { CartService } from './cart.service';
@@ -7,7 +9,8 @@ describe('CartService', () => {
   let cart, cartService;
 
   beforeEach(() => {
-    cartService = new CartService();
+    cartService = new CartService(new LocalStorageService());
+    cartService.clearCart();
   });
 
   it('should include item in cart', () => {

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Ng2Webstorage } from 'ngx-webstorage';
 
 import { CartGridComponent } from './cart-grid/cart-grid.component';
 import { CartRowComponent } from './cart-row/cart-row.component';
@@ -13,7 +14,8 @@ import { SharedModule } from '../shared/shared.module';
   id: module.id,
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    Ng2Webstorage
   ],
   declarations: [
     CartGridComponent,
@@ -33,7 +35,8 @@ import { SharedModule } from '../shared/shared.module';
     CartGridComponent,
     ProductCardComponent,
     ProductGridComponent,
-    SharedModule
+    SharedModule,
+    Ng2Webstorage
   ]
 })
 export class ProductsModule { }
