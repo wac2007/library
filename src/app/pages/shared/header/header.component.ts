@@ -1,0 +1,17 @@
+import { Component, Input} from '@angular/core';
+import { RouterLink } from '@angular/router';
+
+import { CartService } from '../../../products/shared/cart-service/cart.service';
+
+@Component({
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.css']
+})
+export class HeaderComponent {
+  @Input() title: String;
+  
+  constructor(
+    public cartService: CartService
+  ) { }
+}

@@ -1,5 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterModule } from '@angular/router';
+import { APP_BASE_HREF } from '@angular/common';
 
+import { appRoutes } from '../routes';
+import { CartComponent } from '../cart/cart.component';
+import { HeaderComponent } from '../shared/header/header.component';
 import { HomeComponent } from './home.component';
 import { ProductsModule } from '../../products/products.module';
 
@@ -11,9 +16,18 @@ describe('HomeComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         HomeComponent,
+        HeaderComponent,
+        CartComponent
       ],
       imports: [
-        ProductsModule
+        ProductsModule,
+        RouterModule.forRoot(appRoutes)
+      ],
+      providers: [
+        {
+          provide: APP_BASE_HREF,
+          useValue: '/'
+        }
       ]
     })
     .compileComponents();

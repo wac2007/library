@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { ProductsModule } from '../products/products.module';
 import { appRoutes } from './routes';
 import { SharedModule } from '../shared/shared.module';
+import { HeaderComponent } from './shared/header/header.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { SharedModule } from '../shared/shared.module';
   declarations: [
     CartComponent,
     HomeComponent,
+    HeaderComponent
   ]
 })
 export class PagesModule { }
