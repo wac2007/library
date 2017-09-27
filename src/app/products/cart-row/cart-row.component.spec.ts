@@ -37,8 +37,11 @@ describe('CartRowComponent', () => {
   });
 
   it('should display the quantity of product', () => {
-    const element = fixture.nativeElement.querySelector('.item-quant');
-    expect(parseInt(element.innerHTML.trim())).toBe(2);
+    const element = fixture.nativeElement.querySelector('.item-quant input');
+    element.dispatchEvent(new Event('input'));
+    fixture.whenStable().then(() => {
+      expect(parseInt(element.value.trim())).toBe(2);
+    });
   });
 
   it('should display the subtotal of product', () => {
@@ -53,10 +56,15 @@ describe('CartRowComponent', () => {
 
   it('should have trigger delete on button click', () => {
     spyOn(fixture.componentInstance, 'triggerDelete');
-
     const button = fixture.debugElement.nativeElement.querySelector('button');
     button.click();
-
     expect(fixture.componentInstance.triggerDelete).toHaveBeenCalledTimes(1);
+  });
+
+  it('should have trigger update on quantity change', () => {
+    spyOn(fixture.componentInstance, 'triggerUpdate');
+    const element = fixture.nativeElement.querySelector('.item-quant input');
+    element.dispatchEvent(new Event('change'));
+    expect(fixture.componentInstance.triggerUpdate).toHaveBeenCalledTimes(1);
   });
 });

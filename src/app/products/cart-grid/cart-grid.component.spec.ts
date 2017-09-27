@@ -57,4 +57,11 @@ describe('CartGridComponent', () => {
     button.click();
     expect(fixture.componentInstance.deleteItem).toHaveBeenCalledTimes(1);
   });
+
+  it('should have update item on quantity change', () => {
+    spyOn(fixture.componentInstance, 'updateItem');
+    const element = fixture.nativeElement.querySelector('.item-quant input');
+    element.dispatchEvent(new Event('change'));
+    expect(fixture.componentInstance.updateItem).toHaveBeenCalledTimes(1);
+  });
 });

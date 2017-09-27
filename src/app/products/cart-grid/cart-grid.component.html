@@ -12,7 +12,9 @@
     </div>
   </div>
   <div *ngIf="cartItems.length > 0">
-    <app-cart-row *ngFor="let item of cartItems" [cartItem]="item" (delete)="deleteItem($event)"></app-cart-row>
+    <app-cart-row *ngFor="let item of cartItems" [cartItem]="item"
+      (delete)="deleteItem($event)"
+      (update)="updateItem($event)"></app-cart-row>
   </div>
   <div class="row text-bold mg-tp-1">
     <div class="col-6 text-right">Total:</div>

@@ -1,6 +1,7 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { Ng2Webstorage } from 'ngx-webstorage';
+import { NgModule } from '@angular/core';
 
 import { CartGridComponent } from './cart-grid/cart-grid.component';
 import { CartRowComponent } from './cart-row/cart-row.component';
@@ -14,8 +15,9 @@ import { SharedModule } from '../shared/shared.module';
   id: module.id,
   imports: [
     CommonModule,
+    FormsModule,
+    Ng2Webstorage,
     SharedModule,
-    Ng2Webstorage
   ],
   declarations: [
     CartGridComponent,

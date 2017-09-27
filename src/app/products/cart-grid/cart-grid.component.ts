@@ -46,4 +46,8 @@ export class CartGridComponent implements OnInit {
       });
   }
 
+  updateItem(cartItem: CartItem) {
+    this.cartService.updateItem(cartItem);
+  }
+
 }

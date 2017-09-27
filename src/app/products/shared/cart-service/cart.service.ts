@@ -55,6 +55,11 @@ export class CartService {
     , 0);
   }
 
+  updateItem(item: CartItem) {
+    this.cart.items[item.product.id] = item;
+    this.updateLocalStorage();
+  }
+
   removeItem(itemId: number) {
     delete this.cart.items[itemId];
     this.cart.count--;

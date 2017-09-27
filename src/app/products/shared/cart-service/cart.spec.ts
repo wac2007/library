@@ -63,9 +63,17 @@ describe('CartService', () => {
     const product2 = new Product(2, 'TestProduct2', 'http://via.placeholder.com/150x150', 30, 'Lorem Ipsum Dolumn');
     cartService.setItem(product, 1);
     cartService.setItem(product2, 3);
-
     cartService.removeItem('2');
-
     expect(cartService.getDistinctCount()).toBe(1);
   });
+
+  it('should update product quantity in cart', () => {
+    const product = new Product(1, 'TestProduct', 'http://via.placeholder.com/150x150', 10, 'Lorem Ipsum Dolumn');
+    const product2 = new Product(2, 'TestProduct2', 'http://via.placeholder.com/150x150', 30, 'Lorem Ipsum Dolumn');
+    cartService.setItem(product, 1);
+    cartService.setItem(product2, 3);
+    const cartUpdate = new CartItem(product, 5);
+    cartService.updateItem(cartUpdate);
+    expect(cartService.getCountTotal()).toBe(8);
+  })
 });

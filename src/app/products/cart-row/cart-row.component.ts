@@ -10,14 +10,20 @@ import { CartItem } from '../shared/cart-service/cart-item';
 export class CartRowComponent {
   @Input() cartItem: CartItem;
   @Output() delete = new EventEmitter();
+  @Output() update = new EventEmitter();
 
   triggerDelete() {
     this.delete.emit(this.cartItem);
   }
+
+  triggerUpdate() {
+    this.cartItem.quant = this.cartItem.quant < 1 ? 1 : this.cartItem.quant;
+    this.update.emit(this.cartItem);
+  }
+
   subtotal() {
     return this.cartItem.getSubTotal();
   }
-
 
   constructor() { }
 
