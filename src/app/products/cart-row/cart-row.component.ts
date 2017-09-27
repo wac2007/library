@@ -25,6 +25,4 @@ export class CartRowComponent {
     return this.cartItem.getSubTotal();
   }
 
-  constructor() { }
-
 }

@@ -11,16 +11,16 @@ export class ButtonComponent implements OnInit {
   @Input() icon: string;
   @Output() clicked = new EventEmitter();
 
-  private class = 'button';
+  private class;
 
   public emitClick() {
     this.clicked.emit();
   }
 
   ngOnInit() {
-    this.class += ` ${this.classes}`;
+    this.class = `button ${this.classes}`;
     if (this.icon) {
-      this.class += ` fa fa-${this.icon}`
+      this.class += `${this.class} fa fa-${this.icon}`
     }
   }
 }

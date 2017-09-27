@@ -11,7 +11,4 @@ import { CartService } from '../products/shared/cart-service/cart.service';
 })
 export class CoreComponent {
 
-  constructor(
-  ) { }
-
 }
