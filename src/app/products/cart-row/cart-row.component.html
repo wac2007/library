@@ -1,9 +1,11 @@
 <div class="row">
-  <div class="col-4 item-title">{{ cartItem.product.title }}</div>
-  <div class="col-2 item-price">{{ cartItem.product.price | price }}</div>
-  <div class="col-2 item-quant"><input type="number" [(ngModel)]="cartItem.quant" (change)="triggerUpdate()"></div>
-  <div class="col-2 item-subtotal">{{ subtotal() | price }}</div>
-  <div class="col-2">
-    <lib-button classes="button-clear no-border" icon="times-circle" (clicked)="triggerDelete()"></lib-button>
+  <div class="col-12 col-sm-4 item-title">{{ cartItem.product.title }}</div>
+  <div class="col-4 col-sm-2 item-price hidden-sm">{{ cartItem.product.price | price }}</div>
+  <div class="col-6 col-sm-2 item-quant">
+    <input type="number" [(ngModel)]="cartItem.quant" (change)="triggerUpdate()" class="full-width">
+  </div>
+  <div class="col-4 col-sm-2 item-subtotal">{{ subtotal() | price }}</div>
+  <div class="col-2 col-sm-2">
+    <lib-button classes="button-clear no-border pd-top-0" icon="times-circle" (clicked)="triggerDelete()"></lib-button>
   </div>
 </div>

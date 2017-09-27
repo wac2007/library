@@ -29,3 +29,7 @@
 .no-border {
   border: none;
 }
+
+.pd-top-0 {
+  padding-top: 0;
+}
