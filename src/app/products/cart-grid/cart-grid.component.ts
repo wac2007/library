@@ -36,9 +36,14 @@ export class CartGridComponent implements OnInit {
   }
 
   deleteItem(cartItem: CartItem) {
-    this.cartService.removeItem(cartItem.product.id);
-    this.getCartItems();
-    this.alertService.showAlert(`${cartItem.product.title} removido com sucesso!`)
+    this.alertService.confirm(`Deseja remover ${cartItem.product.title} do carrinho?`)
+      .then(val => {
+        if (val) {
+          this.cartService.removeItem(cartItem.product.id);
+          this.getCartItems();
+          this.alertService.showAlert(`${cartItem.product.title} removido com sucesso!`)
+        }
+      });
   }
 
 }
