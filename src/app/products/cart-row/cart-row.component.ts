@@ -17,7 +17,7 @@ export class CartRowComponent {
   }
 
   triggerUpdate() {
-    this.cartItem.quant = this.cartItem.quant < 1 ? 1 : this.cartItem.quant;
+    this.cartItem.quant = Math.max(1, this.cartItem.quant);
     this.update.emit(this.cartItem);
   }
 

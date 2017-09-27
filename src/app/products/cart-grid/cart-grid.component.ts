@@ -35,15 +35,20 @@ export class CartGridComponent implements OnInit {
     return this.cartService.getPriceTotal();
   }
 
+  
   deleteItem(cartItem: CartItem) {
+    this.cartService.removeItem(cartItem.product.id);
+    this.getCartItems();
+    this.alertService.showAlert(`${cartItem.product.title} removido com sucesso!`)
+  }
+
+  askDelete(cartItem: CartItem) {
     this.alertService.confirm(`Deseja remover ${cartItem.product.title} do carrinho?`)
-      .then(val => {
-        if (val) {
-          this.cartService.removeItem(cartItem.product.id);
-          this.getCartItems();
-          this.alertService.showAlert(`${cartItem.product.title} removido com sucesso!`)
-        }
-      });
+    .then(val => {
+      if (val) {
+        this.deleteItem(cartItem);
+      }
+    });
   }
 
   updateItem(cartItem: CartItem) {

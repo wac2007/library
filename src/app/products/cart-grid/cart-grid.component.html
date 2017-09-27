@@ -13,7 +13,7 @@
   </div>
   <div *ngIf="cartItems.length > 0">
     <app-cart-row *ngFor="let item of cartItems" [cartItem]="item"
-      (delete)="deleteItem($event)"
+      (delete)="askDelete($event)"
       (update)="updateItem($event)"></app-cart-row>
   </div>
   <div class="row text-bold mg-tp-1">

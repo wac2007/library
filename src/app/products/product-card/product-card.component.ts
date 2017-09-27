@@ -14,14 +14,15 @@ export class ProductCardComponent implements OnInit {
   @Input() product: Product;
   @Output() selected = new EventEmitter<Product>();
 
-  currentProduct: Product;
+  public currentProduct: Product;
+  
+  ngOnInit() {
+    this.currentProduct = this.product;
+  }
 
   public select() {
     this.selected.emit(this.product);
   }
 
-  ngOnInit() {
-    this.currentProduct = this.product;
-  }
 
 }
