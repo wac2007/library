@@ -6,11 +6,26 @@
   border: 1px solid #000;
   cursor: pointer;
 }
+
 .button-block {
   width: 100%;
 }
+
 .button-add-cart {
   border-radius: 0 0 4px 4px;
   border: none;
   border-top: 1px solid #000;
+}
+
+.button-clear {
+  color: #000;
+  background: transparent;
+}
+.button-clear:hover {
+  color: #555;
+  background: transparent;
+}
+
+.no-border {
+  border: none;
 }

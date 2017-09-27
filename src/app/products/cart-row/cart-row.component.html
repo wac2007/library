@@ -4,6 +4,6 @@
   <div class="col-2 item-quant"><input type="number" [(ngModel)]="cartItem.quant" (change)="triggerUpdate()"></div>
   <div class="col-2 item-subtotal">{{ subtotal() | price }}</div>
   <div class="col-2">
-    <lib-button label="Remover" (clicked)="triggerDelete()"></lib-button>
+    <lib-button classes="button-clear no-border" icon="times-circle" (clicked)="triggerDelete()"></lib-button>
   </div>
 </div>
