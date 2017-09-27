@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 
+import { AlertService } from '../../shared/alert/alert.service';
 import { CartService } from '../shared/cart-service/cart.service';
 import { Product } from '../shared/product';
 import { ProductCardComponent } from '../product-card/product-card.component';
@@ -21,7 +22,8 @@ export class ProductGridComponent {
 
   constructor(
     private service: ProductService,
-    public cartService: CartService
+    public cartService: CartService,
+    public alertService: AlertService
   ) {
     this.getProducts();
   }
@@ -32,6 +34,7 @@ export class ProductGridComponent {
 
   public addToCart(product: Product) {
     this.cartService.setItem(product, 1);
+    this.alertService.showAlert(`${product.title} Adicionado ao carrinho!`);
   }
 
 

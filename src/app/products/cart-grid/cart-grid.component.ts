@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import { AlertService } from '../../shared/alert/alert.service';
 import { CartItem } from '../shared/cart-service/cart-item';
 import { CartService } from '../shared/cart-service/cart.service';
 
@@ -14,6 +15,7 @@ export class CartGridComponent implements OnInit {
 
   constructor(
     public cartService: CartService,
+    public alertService: AlertService
   ) { 
   }
 
@@ -36,6 +38,7 @@ export class CartGridComponent implements OnInit {
   deleteItem(cartItem: CartItem) {
     this.cartService.removeItem(cartItem.product.id);
     this.getCartItems();
+    this.alertService.showAlert(`${cartItem.product.title} removido com sucesso!`)
   }
 
 }
