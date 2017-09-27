@@ -4,6 +4,9 @@
 .pull-right {
   float: right;
 }
+.pull-left {
+  float: left;
+}
 .header {
   margin-bottom: 3rem;
 }
