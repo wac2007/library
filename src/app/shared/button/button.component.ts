@@ -20,7 +20,7 @@ export class ButtonComponent implements OnInit {
   ngOnInit() {
     this.class = `button ${this.classes}`;
     if (this.icon) {
-      this.class += `${this.class} fa fa-${this.icon}`
+      this.class = `${this.class} fa fa-${this.icon}`
     }
   }
 }
