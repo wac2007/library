@@ -1,4 +1,5 @@
 import { CommonModule } from '@angular/common';
+import { CurrencyPipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Ng2Webstorage } from 'ngx-webstorage';
 import { NgModule } from '@angular/core';
@@ -31,7 +32,8 @@ import { SharedModule } from '../shared/shared.module';
   ],
   providers: [
     CartService,
-    ProductService
+    ProductService,
+    CurrencyPipe
   ],
   exports: [
     CartGridComponent,
