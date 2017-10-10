@@ -1,17 +1,14 @@
-.text-center {
+.header {
+  margin-bottom: 3rem;
   text-align: center;
+  border-bottom: 1px solid #000;
 }
+
 .pull-right {
   float: right;
 }
 .pull-left {
   float: left;
-}
-.header {
-  margin-bottom: 3rem;
-}
-.header-divisor {
-  border-bottom: 1px solid #000;
 }
 .main-title {
   margin-bottom: .3rem;

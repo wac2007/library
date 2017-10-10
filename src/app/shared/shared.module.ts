@@ -29,6 +29,8 @@ import { MenuItemComponent } from './menu/menu-item/menu-item.component';
     CommonModule,
     ButtonComponent,
     IconComponent,
+    MenuComponent,
+    MenuItemComponent,
     PricePipe,
     RouterModule,
   ]

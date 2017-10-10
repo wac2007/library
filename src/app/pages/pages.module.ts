@@ -8,6 +8,7 @@ import { ProductsModule } from '../products/products.module';
 import { appRoutes } from './routes';
 import { SharedModule } from '../shared/shared.module';
 import { HeaderComponent } from './shared/header/header.component';
+import { HeaderBrandComponent } from './shared/header/header-brand/header-brand.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { HeaderComponent } from './shared/header/header.component';
     CartComponent,
     HomeComponent,
     HeaderComponent,
+    HeaderBrandComponent,
   ],
   exports: [
     CartComponent,
