@@ -13,7 +13,7 @@ describe('HeaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ 
+      declarations: [
       ],
       imports: [
         PagesModule,
@@ -48,5 +48,5 @@ describe('HeaderComponent', () => {
   it('should have cart button', () => {
     const element = fixture.debugElement.nativeElement.querySelector('.cart-button');
     expect(element).toBeTruthy();
-  })
+  });
 });

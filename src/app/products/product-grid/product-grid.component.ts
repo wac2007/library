@@ -9,7 +9,7 @@ import { ProductService } from '../shared/product-service/product.service';
 @Component({
   selector: 'app-product-grid',
   templateUrl: './product-grid.component.html',
-  entryComponents: [ 
+  entryComponents: [
     ProductCardComponent
   ],
   providers: [

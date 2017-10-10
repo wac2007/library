@@ -16,13 +16,13 @@ export class CartGridComponent implements OnInit {
   constructor(
     public cartService: CartService,
     public alertService: AlertService
-  ) { 
+  ) {
   }
 
   ngOnInit() {
     this.getCartItems();
   }
-  
+
   getCartItems() {
     this.cartItems = this.cartService.getIterableItems();
   }
@@ -35,11 +35,10 @@ export class CartGridComponent implements OnInit {
     return this.cartService.getPriceTotal();
   }
 
-  
   deleteItem(cartItem: CartItem) {
     this.cartService.removeItem(cartItem.product.id);
     this.getCartItems();
-    this.alertService.showAlert(`${cartItem.product.title} removido com sucesso!`)
+    this.alertService.showAlert(`${cartItem.product.title} removido com sucesso!`);
   }
 
   askDelete(cartItem: CartItem) {

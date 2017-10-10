@@ -44,9 +44,9 @@ describe('CartGridComponent', () => {
 
   it('should have count total', () => {
     const element = fixture.debugElement.nativeElement.querySelector('.count-total');
-    expect(parseInt(element.innerHTML.trim())).toBe(3);
+    expect(parseInt(element.innerHTML.trim(), 10)).toBe(3);
   });
-  
+
   it('should have price total', () => {
     const element = fixture.debugElement.nativeElement.querySelector('.price-total');
     expect(element.innerHTML.trim()).toBe('R$50,00');

@@ -6,7 +6,7 @@ import { CartService } from './cart.service';
 import { Product } from '../product';
 
 describe('CartService', () => {
-  let cart, cartService;
+  let cartService;
 
   beforeEach(() => {
     cartService = new CartService(new LocalStorageService());
@@ -25,7 +25,7 @@ describe('CartService', () => {
   it('should bring item in cart', () => {
     const product = new Product(1, 'TestProduct', 'http://via.placeholder.com/150x150', 20, 'Lorem Ipsum Dolumn');
     cartService.setItem(product, 1);
-    let _item = cartService.getItemInCart(1);
+    const _item = cartService.getItemInCart(1);
     expect(_item.product).toBe(product);
   });
 
@@ -36,10 +36,10 @@ describe('CartService', () => {
     cartService.setItem(product, 4);
     const countItems = Object.keys(cartService.getItems()).length;
     expect(countItems).toBe(1);
-    let _item = cartService.getItemInCart(1);
+    const _item = cartService.getItemInCart(1);
     expect(_item.quant).toBe(7);
   });
-  
+
   it('should bring the full count of items', () => {
     const product = new Product(1, 'TestProduct', 'http://via.placeholder.com/150x150', 20, 'Lorem Ipsum Dolumn');
     const product2 = new Product(2, 'TestProduct2', 'http://via.placeholder.com/150x150', 40, 'Lorem Ipsum Dolumn');
@@ -75,5 +75,5 @@ describe('CartService', () => {
     const cartUpdate = new CartItem(product, 5);
     cartService.updateItem(cartUpdate);
     expect(cartService.getCountTotal()).toBe(8);
-  })
+  });
 });

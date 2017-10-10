@@ -34,23 +34,23 @@ export class CartService {
     this.cart.items[product.id] = cartItem;
     this.updateLocalStorage();
   }
-  
+
   getItemInCart(id: number) {
     return this.cart.items[id] || null;
   }
-  
+
   getDistinctCount(): number {
     return this.cart.count;
   }
 
   getCountTotal(): number {
-    return this.getIterableItems().reduce((previous, item) => 
+    return this.getIterableItems().reduce((previous, item) =>
       previous + item.quant
     , 0);
   }
 
   getPriceTotal(): number {
-    return this.getIterableItems().reduce((previous, item) => 
+    return this.getIterableItems().reduce((previous, item) =>
       previous + (item.product.price * item.quant)
     , 0);
   }
@@ -65,17 +65,17 @@ export class CartService {
     this.cart.count--;
     this.updateLocalStorage();
   }
-  
+
   clearCart() {
     this.cart = new Cart();
     this.localStg.clear();
   }
 
   private loadLocalStorage() {
-    let _cart = this.localStg.retrieve('app-cart');
-    if (!_cart) return false;
+    const _cart = this.localStg.retrieve('app-cart');
+    if (!_cart) { return false; }
     Object.keys(_cart.items).map((key) => {
-      let item = _cart.items[key];
+      const item = _cart.items[key];
       _cart.items[key] = new CartItem(item.product, item.quant);
     });
     this.cart = _cart;
@@ -84,5 +84,4 @@ export class CartService {
   private updateLocalStorage() {
     this.localStg.store('app-cart', this.cart);
   }
-
 }

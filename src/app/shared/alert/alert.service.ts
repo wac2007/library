@@ -13,13 +13,13 @@ export class AlertService {
     return new Promise((resolve, reject) => {
       alertify.confirm(
         message,
-        () => { 
+        () => {
           resolve(true);
         },
         () => {
           resolve(false);
         })
-        .set('labels', {ok:'Excluir', cancel:'Cancelar'})
+        .set('labels', {ok: 'Excluir', cancel: 'Cancelar'})
         .set('title', 'Confirmar Exclusão');
     });
   }

@@ -6,9 +6,9 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./button.component.css']
 })
 export class ButtonComponent implements OnInit {
-  @Input() label: string;
-  @Input() classes: string = '';
-  @Input() icon: string;
+  @Input() label: String;
+  @Input() classes: String = '';
+  @Input() icon: String;
   @Output() clicked = new EventEmitter();
 
   private class;
@@ -20,7 +20,7 @@ export class ButtonComponent implements OnInit {
   ngOnInit() {
     this.class = `button ${this.classes}`;
     if (this.icon) {
-      this.class = `${this.class} fa fa-${this.icon}`
+      this.class = `${this.class} fa fa-${this.icon}`;
     }
   }
 }

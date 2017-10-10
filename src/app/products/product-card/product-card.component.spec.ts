@@ -13,7 +13,7 @@ describe('ProductCardComponent', () => {
       imports: [
         SharedModule
       ],
-      declarations: [ 
+      declarations: [
         ProductCardComponent,
       ]
     })

@@ -40,7 +40,7 @@ describe('CartRowComponent', () => {
     const element = fixture.nativeElement.querySelector('.item-quant input');
     element.dispatchEvent(new Event('input'));
     fixture.whenStable().then(() => {
-      expect(parseInt(element.value.trim())).toBe(2);
+      expect(parseInt(element.value.trim(), 10)).toBe(2);
     });
   });
 
