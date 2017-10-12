@@ -1,5 +1,6 @@
-<li>
-  <a [routerLink]='[item.route]'>
-    <label>{{ item.text }}</label>
+<li class="menu__menu_item">
+  <a (click)="emitClick()" [ngClass]="classes" [routerLink]='route'>
+    <app-icon [icon]="item.icon"></app-icon>
+    {{ item.text }}
   </a>
 </li>

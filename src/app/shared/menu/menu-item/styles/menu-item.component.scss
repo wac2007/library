@@ -1,0 +1,27 @@
+@import './menu-item.mixins.scss';
+
+.menu__menu_item {
+  @include display-flex();
+  list-style: none;
+  flex-direction: row;
+}
+.menu__menu_link {
+  @include menu-link();
+}
+.menu__menu_link--active {
+  @include menu-link();
+  background-color: #46C164;
+  color: #FFF;
+
+  &:hover {
+    color: #FFF;
+  }
+}
+.menu__menu_link--inactive {
+  @include menu-link();
+  color: #888;
+
+  &:hover {
+    color: #888;
+  }
+}
