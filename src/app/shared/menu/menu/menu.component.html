@@ -1,0 +1,4 @@
+<ul class="menu">
+  <app-menu-item *ngFor="let item of menuItems" [item]="item"
+    [inactive]="isInactive(item)"></app-menu-item>
+</ul>

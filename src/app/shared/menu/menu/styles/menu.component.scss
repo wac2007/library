@@ -1,0 +1,8 @@
+@import './menu.mixins.scss';
+
+.menu {
+  @include display-row();
+  line-height: 23px;
+  background: #FFFFFF;
+  margin: 0;
+}
