@@ -47,11 +47,4 @@ describe('MenuItemComponent', () => {
     const icon = fixture.nativeElement.querySelector(ICON_SELECTOR);
     expect(icon.classList.contains(ICON_MATCH)).toBeTruthy();
   });
-
-  it('should have trigger delete on button click', () => {
-    spyOn(fixture.componentInstance, 'emitClick');
-    const link = fixture.nativeElement.querySelector(LINK_CLICK_SELECTOR);
-    link.click();
-    expect(fixture.componentInstance.emitClick).toHaveBeenCalledTimes(1);
-  });
 });
