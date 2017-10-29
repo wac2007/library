@@ -1,0 +1,7 @@
+@import './header-brand.mixins';
+
+.brand {
+  @include display-flex();
+  max-width: 150px;
+  margin: 14px 10px 0;
+}
