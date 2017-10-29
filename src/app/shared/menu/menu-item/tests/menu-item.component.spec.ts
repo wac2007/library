@@ -6,7 +6,10 @@ import { appRoutes } from './mock-routes';
 import { MenuItemComponent } from '../menu-item.component';
 import { SharedModule } from '../../../shared.module';
 
-import options from './menu-item.config';
+import {
+  BASE_ROUTE, MENU_ITEM, MENU_LINK_SELECTOR, MENU_REGEX, ICON_MATCH, ICON_SELECTOR,
+  LINK_CLICK_SELECTOR
+} from './menu-item.test-config';
 
 describe('MenuItemComponent', () => {
   let component: MenuItemComponent;
@@ -21,7 +24,7 @@ describe('MenuItemComponent', () => {
       providers: [
         {
           provide: APP_BASE_HREF,
-          useValue: options.BASE_ROUTE
+          useValue: BASE_ROUTE
         }
       ]
     })
@@ -31,23 +34,23 @@ describe('MenuItemComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(MenuItemComponent);
     component = fixture.componentInstance;
-    component.item = options.MENU_ITEM;
+    component.item = MENU_ITEM;
     fixture.detectChanges();
   });
 
   it('should render the button text', () => {
-    const label = fixture.nativeElement.querySelector(options.MENU_LINK_SELECTOR);
-    expect(label.innerHTML.trim()).toMatch(options.MENU_REGEX);
+    const label = fixture.nativeElement.querySelector(MENU_LINK_SELECTOR);
+    expect(label.innerHTML.trim()).toMatch(MENU_REGEX);
   });
 
   it('should render the icon', () => {
-    const icon = fixture.nativeElement.querySelector(options.ICON_SELECTOR);
-    expect(icon.classList.contains(options.ICON_MATCH)).toBeTruthy();
+    const icon = fixture.nativeElement.querySelector(ICON_SELECTOR);
+    expect(icon.classList.contains(ICON_MATCH)).toBeTruthy();
   });
 
   it('should have trigger delete on button click', () => {
     spyOn(fixture.componentInstance, 'emitClick');
-    const link = fixture.nativeElement.querySelector(options.LINK_CLICK_SELECTOR);
+    const link = fixture.nativeElement.querySelector(LINK_CLICK_SELECTOR);
     link.click();
     expect(fixture.componentInstance.emitClick).toHaveBeenCalledTimes(1);
   });
