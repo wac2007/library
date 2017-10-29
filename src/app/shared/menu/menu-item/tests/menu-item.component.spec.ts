@@ -5,10 +5,8 @@ import { APP_BASE_HREF } from '@angular/common';
 import { appRoutes } from './mock-routes';
 import { MenuItemComponent } from '../menu-item.component';
 import { SharedModule } from '../../../shared.module';
-const {
-  MENU_ITEM, MENU_LINK_SELECTOR, ICON_SELECTOR, ICON_MATCH, EMITTER_FUNCTION, LINK_CLICK_SELECTOR,
-  BASE_ROUTE
-} = require('./menu-item.config');
+
+import options from './menu-item.config';
 
 describe('MenuItemComponent', () => {
   let component: MenuItemComponent;
@@ -23,7 +21,7 @@ describe('MenuItemComponent', () => {
       providers: [
         {
           provide: APP_BASE_HREF,
-          useValue: BASE_ROUTE
+          useValue: options.BASE_ROUTE
         }
       ]
     })
@@ -33,23 +31,23 @@ describe('MenuItemComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(MenuItemComponent);
     component = fixture.componentInstance;
-    component.item = MENU_ITEM;
+    component.item = options.MENU_ITEM;
     fixture.detectChanges();
   });
 
   it('should render the button text', () => {
-    const label = fixture.debugElement.nativeElement.querySelector(MENU_LINK_SELECTOR);
-    expect(label.innerHTML.trim()).toMatch(MENU_ITEM.text);
+    const label = fixture.nativeElement.querySelector(options.MENU_LINK_SELECTOR);
+    expect(label.innerHTML.trim()).toMatch(options.MENU_REGEX);
   });
 
   it('should render the icon', () => {
-    const icon = fixture.debugElement.nativeElement.querySelector(ICON_SELECTOR);
-    expect(icon.classList.contains(ICON_MATCH)).toBeTruthy();
+    const icon = fixture.nativeElement.querySelector(options.ICON_SELECTOR);
+    expect(icon.classList.contains(options.ICON_MATCH)).toBeTruthy();
   });
 
   it('should have trigger delete on button click', () => {
-    spyOn(fixture.componentInstance, EMITTER_FUNCTION);
-    const link = fixture.debugElement.nativeElement.querySelector(LINK_CLICK_SELECTOR);
+    spyOn(fixture.componentInstance, 'emitClick');
+    const link = fixture.nativeElement.querySelector(options.LINK_CLICK_SELECTOR);
     link.click();
     expect(fixture.componentInstance.emitClick).toHaveBeenCalledTimes(1);
   });
