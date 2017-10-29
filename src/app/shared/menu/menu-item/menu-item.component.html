@@ -1,5 +1,5 @@
 <li class="menu__menu_item">
-  <a (click)="emitClick()" *ngIf="!inactive" class="menu__menu_link" [routerLink]='item.route' 
+  <a *ngIf="!inactive" class="menu__menu_link" [routerLink]='item.route' 
     routerLinkActive="menu__menu_link--active" [routerLinkActiveOptions]="{ exact: true }">
       <app-icon [icon]="item.icon"></app-icon>
       {{ item.text }}
