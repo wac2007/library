@@ -1,4 +1,6 @@
-export class MenuItem {
+const MODIFIER_INACTIVE = 'inactive';
+
+class MenuItem {
   constructor(
     public text: String,
     public route: String,
@@ -7,3 +9,8 @@ export class MenuItem {
   ) {
   }
 }
+
+export {
+  MODIFIER_INACTIVE,
+  MenuItem
+};
