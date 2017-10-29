@@ -6,7 +6,7 @@ import { AlertService } from './alert/alert.service';
 import { ButtonComponent } from './button/button.component';
 import { PricePipe } from './price/price.pipe';
 import { IconComponent } from './icon/icon.component';
-import { MenuComponent } from './menu/menu.component';
+import { MenuComponent } from './menu/menu/menu.component';
 import { MenuItemComponent } from './menu/menu-item/menu-item.component';
 
 @NgModule({
