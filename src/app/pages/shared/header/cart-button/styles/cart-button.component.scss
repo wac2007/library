@@ -1,0 +1,25 @@
+@import './cart-button.mixins';
+
+.cart-button {
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  @include display-flex();
+  position: relative;
+}
+
+.cart-button__link {
+  padding: 22px 18px;
+  color: #575757;
+}
+
+.cart-button__badge {
+  background-color: #46C164;
+  color: #FFF;
+  border-radius: 100%;
+  padding: 5px 10px;
+  margin-left: -10px;
+  z-index: 1;
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+}

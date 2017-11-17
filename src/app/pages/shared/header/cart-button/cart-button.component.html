@@ -1,0 +1,8 @@
+<div class="cart-button">
+  <a class="cart-button__link" [routerLink]="['/cart']">
+    <app-icon icon="shopping-cart" size="2"></app-icon>
+  </a>
+  <span class="cart-button__badge">
+    {{ getCount() }}
+  </span>
+</div>

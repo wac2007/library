@@ -6,22 +6,14 @@ import { MenuItem } from '../../../shared/menu/menu-item/menu-item';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./styles/header.component.scss']
 })
 export class HeaderComponent {
   @Input() title: String;
   private menuItems: Array<MenuItem> = [
-    new MenuItem('Home', '/'),
-    new MenuItem('Contato', '/contact'),
-    new MenuItem('Sobre', '/about')
+    new MenuItem('Home', '/', 'home', 'active'),
+    new MenuItem('Carrinho', '/cart', 'shopping-cart'),
+    new MenuItem('Contato', '/contact', 'phone', 'inactive'),
+    new MenuItem('Sobre', '/about', 'info-circle', 'inactive'),
   ];
-
-  constructor(
-    public cartService: CartService
-  ) {
-  }
-
-  getCount() {
-    return this.cartService.getDistinctCount();
-  }
 }

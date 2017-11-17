@@ -2,8 +2,6 @@
   <app-header-brand></app-header-brand>
   <app-menu [menuItems]="menuItems"></app-menu>
   <div class="pull-right">
-    <a class="cart-button" [routerLink]="['/cart']">
-      <app-icon icon="shopping-cart" size="2"></app-icon> ({{ getCount() }})
-    </a>
+    <app-cart-button></app-cart-button>
   </div>
 </header>
